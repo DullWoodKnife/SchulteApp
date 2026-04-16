@@ -1,5 +1,6 @@
 package com.example.schulteapp;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
@@ -69,7 +70,7 @@ import android.widget.Chronometer;
              numbers[i] = numberList.get(i);
              tiles[i].setText(String.valueOf(numbers[i]));
              tiles[i].setEnabled(true);
-             tiles[i].setBackgroundColor(getResources().getColor(android.color.white));
+             tiles[i].setBackgroundColor(Color.WHITE);
          }
      }
 
@@ -77,7 +78,7 @@ import android.widget.Chronometer;
          if (numbers[index] == currentNumber) {
              // Correct tile
              tiles[index].setEnabled(false);
-             tiles[index].setBackgroundColor(getResources().getColor(android.color.holo_green_light));
+             tiles[index].setBackgroundColor(Color.GREEN);
              currentNumber++;
 
              if (currentNumber > NUM_TILES) {
@@ -89,12 +90,12 @@ import android.widget.Chronometer;
              }
          } else {
              // Wrong tile
-             tiles[index].setBackgroundColor(getResources().getColor(android.color.holo_red_light));
+             tiles[index].setBackgroundColor(Color.RED);
              // Optionally, you can reset the color after a short delay
              new android.os.Handler().postDelayed(
                  new Runnable() {
                      public void run() {
-                         tiles[index].setBackgroundColor(getResources().getColor(android.color.white));
+                         tiles[index].setBackgroundColor(Color.WHITE);
                      }
                  }, 500);
          }
